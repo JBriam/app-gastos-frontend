@@ -1,0 +1,51 @@
+<div class="bg-white p-4 m-4 rounded shadow-md text-[10px] md:text-base">
+  <h2 class="text-xl font-semibold mb-4 text-amber-500">Agregar Gasto</h2>
+
+  Categoría
+  <select
+    [(ngModel)]="categoria"
+    class="mb-4 w-full p-2 border rounded placeholder:text-gray-500"
+  >
+    <option value="" disabled selected>Selecciona una categoría</option>
+    <option value="Alimentación">Alimentación</option>
+    <option value="Transporte">Transporte</option>
+    <option value="Entretenimiento">Entretenimiento</option>
+    <option value="Salud">Salud</option>
+    <option value="Otros">Otros</option>
+  </select>
+
+  Descripción
+  <input
+    [(ngModel)]="descripcion"
+    type="text"
+    placeholder="Ingrese una descripción breve"
+    class="mb-2 w-full p-2 border rounded placeholder-gray-500"
+  />
+
+  Monto (S/)
+  <input
+    [(ngModel)]="monto"
+    type="number"
+    placeholder="Ingrese monto"
+    class="mb-2 w-full p-2 border rounded placeholder-gray-500"
+  />
+
+  
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-4">
+    <button
+    (click)="agregar()"
+    class="bg-blue-500 text-white w-full py-2 rounded hover:bg-blue-800 hover:scale-105 transition duration-300 ease-in-out"
+  >
+    Agregar
+  </button>
+  <button
+    (click)="cancelar()"
+    class="bg-red-500 text-white w-full py-2 rounded hover:bg-red-800 hover:scale-105 transition duration-300 ease-in-out"
+  >
+    Cancelar
+  </button>
+
+  </div>
+  
+</div>
+

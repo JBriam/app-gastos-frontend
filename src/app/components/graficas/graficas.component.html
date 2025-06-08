@@ -1,0 +1,34 @@
+<div class="grid grid-cols-2 md:grid-cols-2 gap-6">
+  <!-- Gasto por Día -->
+  <div>
+    <h2 class="text-lg font-semibold mb-2">Gastos por Día</h2>
+    <canvas
+      baseChart
+      [data]="gastosPorDiaData"
+      [options]="chartOptions"
+      [type]="'line'"
+    ></canvas>
+  </div>
+
+  <!-- Top Categorías -->
+  <div>
+    <h2 class="text-lg font-semibold mb-2">Top Categorías</h2>
+    <canvas
+      baseChart
+      [data]="topCategoriasData"
+      [options]="chartOptions"
+      [type]="'bar'"
+    ></canvas>
+  </div>
+
+  <!-- Gasto Mensual -->
+  <!--<div class="md:col-span-2">
+    <h2 class="text-lg font-semibold mb-2">Gasto Mensual</h2>
+    <canvas
+      baseChart
+      [data]="gastosMensualesData"
+      [options]="chartOptions"
+      [type]="'line'"
+    ></canvas>
+  </div>-->
+</div>

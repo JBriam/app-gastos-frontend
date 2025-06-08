@@ -1,0 +1,19 @@
+<div class="bg-white p-4 m-4 rounded shadow-md">
+  <h2 class="text-xl font-semibold mb-2 text-amber-500">Detalle de Gastos</h2>
+  <ul>
+    <li *ngFor="let gasto of gastos" class="flex justify-between items-center py-2 border-b">
+      <div>
+        <p class="text-[12px] md:text-[16px] font-bold">{{ gasto.categoria }}</p>
+        <p class="text-[10px] md:text-[12px] text-gray-500">{{ gasto.fecha | date:'dd/MM/yyyy' }} {{ gasto.hora }}</p>
+        <p class="text-[10px] md:text-[14px]">{{ gasto.descripcion }}</p>
+      </div>
+      <div class="flex items-center gap-4">
+        <span class="text-green-600 font-bold text-[10px] md:text-base">S/ {{ gasto.monto.toFixed(2) }}</span> <!-- Usamos toFixed para que figure con .00 -->
+        <button 
+          *ngIf="gasto.id"
+          (click)="eliminar.emit(gasto.id)"  
+          class="text-red-600 hover:underline text-[10px] md:text-base">Eliminar</button>
+      </div>
+    </li>
+  </ul>
+</div>
