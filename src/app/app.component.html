@@ -1,27 +1,85 @@
 <app-header></app-header>
-<div class="max-h-screen max-w bg-image bg-cover bg-center h-[75vh] md:h-[75vh] flex flex-col items-center justify-center" style="background-image: url('https://unidev.mx/wp-content/uploads/2024/04/20240424-Como-ahorrar-mas-y-mejor-anexo-1.png ')">
-  
-  <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
-    
-    <!-- Sección Izquierda: Formulario + Lista -->
-    <div class="space-y-4">
-      <app-gasto-form (nuevoGasto)="agregarGasto($event)"></app-gasto-form>
-    </div>
-    <div class="space-y-4">
-      <app-resumen [total]="total"></app-resumen>
-      <app-gasto-list [gastos]="gastos" (eliminar)="eliminarGasto($event)"></app-gasto-list>
-    </div>
 
+<div class="min-h-screen bg-gradient-to-br from-blue-50 to-teal-50">
+  <!-- Hero Section -->
+  <div class="bg-gradient-to-r from-teal-500 to-emerald-500 text-white py-12 sm:py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        
+        <!-- Text Column -->
+        <div class="text-center lg:text-left order-2 lg:order-1">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
+            Gestor de Gastos 
+            <span class="text-teal-200">Personales</span>
+          </h1>
+          <p class="text-lg sm:text-xl md:text-2xl opacity-90 mb-6 leading-relaxed">
+            Controla tus finanzas de manera inteligente y eficiente
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <button class="bg-white text-teal-600 px-6 py-3 rounded-lg font-semibold hover:bg-teal-50 transition-all duration-300 transform hover:scale-105 shadow-lg">
+              Comenzar Ahora
+            </button>
+            <button class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-teal-600 transition-all duration-300">
+              Ver Demo
+            </button>
+          </div>
+        </div>
+
+        <!-- Image Column -->
+        <div class="flex justify-center order-1 lg:order-2">
+          <div class="relative">
+            <!-- Floating background circle -->
+            <div class="absolute inset-0 bg-teal-400 bg-opacity-20 rounded-full animate-pulse"></div>
+            
+            <!-- Main floating pig image -->
+            <img 
+              src="pig2.png" 
+              alt="Cerdo ahorrador" 
+              class="w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80 object-contain animate-float relative z-10 filter drop-shadow-2xl">
+            
+            <!-- Decorative elements -->
+            <div class="absolute -top-4 -right-4 w-8 h-8 bg-yellow-400 rounded-full animate-bounce opacity-80"></div>
+            <div class="absolute -bottom-2 -left-2 w-6 h-6 bg-emerald-300 rounded-full animate-ping opacity-60"></div>
+            <div class="absolute top-1/2 -left-8 w-4 h-4 bg-teal-300 rounded-full animate-pulse opacity-70"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </div>
 
-  <!-- Sección Derecha: Gráficas -->
-   <!--
-  <div class="bg-white rounded-xl shadow p-4">
-    <h2 class="text-xl font-semibold mb-4 text-amber-500">Gráficas de Gastos</h2>
-    <app-graficas [gastos]="gastos"></app-graficas>
+  <!-- Main Content -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
+      
+      <!-- Left Column: Form and Summary -->
+      <div class="lg:col-span-5 space-y-6">
+        <div class="bg-white rounded-xl shadow-lg border border-gray-100">
+          <app-gasto-form (nuevoGasto)="agregarGasto($event)"></app-gasto-form>
+        </div>
+        
+        <div class="bg-white rounded-xl shadow-lg border border-gray-100">
+          <app-resumen [total]="total" [gastos]="gastos"></app-resumen>
+        </div>
+      </div>
+
+      <!-- Right Column: Expenses List -->
+      <div class="lg:col-span-7">
+        <app-gasto-list [gastos]="gastos" (eliminar)="eliminarGasto($event)"></app-gasto-list>
+      </div>
+
+    </div>
+
+    <!-- Graphics Section (commented out for now) -->
+    <!--
+    <div class="mt-8">
+      <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-6">
+        <h2 class="text-xl font-semibold mb-4 text-amber-500">Gráficas de Gastos</h2>
+        <app-graficas [gastos]="gastos"></app-graficas>
+      </div>
+    </div>
+    -->
   </div>
-  -->
 </div>
-
 
 <app-footer></app-footer>

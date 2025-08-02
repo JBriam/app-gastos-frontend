@@ -1,4 +1,50 @@
-<footer
-    class="bg-gray-900 text-white py-4 text-center text-sm md:text-md font-bold shadow-lg/20 h-[10vh] flex items-center justify-center">
-    © Derechos Reservados. Creado por Briam Rojas.
+<footer class="bg-gray-900 text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      <!-- Logo and Description -->
+      <div class="col-span-1">
+        <div class="flex items-center space-x-3 mb-4">
+          <div class="w-8 h-8 rounded-lg flex items-center justify-center">
+            <img src="pig.png" alt="Logo" class="w-full h-full object-cover">
+          </div>
+          <h3 class="text-lg font-bold">ChiWan</h3>
+        </div>
+        <p class="text-gray-400 text-sm">
+          Gestiona tus gastos de manera inteligente y toma el control de tus finanzas personales.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-span-1">
+        <h4 class="text-lg font-semibold mb-4">Enlaces Rápidos</h4>
+        <ul class="space-y-2">
+          <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-200 text-sm">Dashboard</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-200 text-sm">Agregar Gasto</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-200 text-sm">Reportes</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-200 text-sm">Ayuda</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-span-1">
+        <h4 class="text-lg font-semibold mb-4">Contacto</h4>
+        <div class="space-y-2 text-sm text-gray-400">
+          <p>📧 briam.rojas&#64;example.com</p>
+          <p>📱 +51 999 999 999</p>
+          <p>🌐 www.chiwan.com</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="border-t border-gray-700 mt-8 pt-6 flex flex-col sm:flex-row justify-between items-center">
+      <p class="text-gray-400 text-sm">
+        © {{ currentYear }} ChiWan. Todos los derechos reservados.
+      </p>
+      <p class="text-gray-400 text-sm mt-2 sm:mt-0">
+        Creado por <span class="text-amber-500 font-semibold">Briam Rojas</span>
+      </p>
+    </div>
+  </div>
 </footer>
